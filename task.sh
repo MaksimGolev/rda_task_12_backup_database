@@ -1,7 +1,7 @@
 #! /bin/bash
 
-DB_USER=${DB_USER}
-DB_PASSWORD=${DB_PASSWORD}
+USER=$DB_USER
+PASSWORD=$DB_PASSWORD
 
 mysqldump -u"$USER" -p"$PASSWORD" ShopDB --no-create-db --result-file=shopdb_full_backup.sql
 mysql -u "$USER" -p"$PASSWORD" ShopDBReserve < shopdb_full_backup.sql
